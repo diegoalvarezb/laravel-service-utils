@@ -18,8 +18,10 @@ class ServiceUtilsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // @TODO
-        // copy config
+        // publish config files
+        $this->publishes([
+            __DIR__ . '/config/service-utils.php' => config_path('service-utils.php'),
+        ], 'service-utils');
     }
 
     /**

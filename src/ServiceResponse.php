@@ -40,7 +40,7 @@ class ServiceResponse
         $this->message = $message;
 
         if (empty($message)) {
-            $this->message = config('service-utils.messages.' . $errorCode);
+            $this->message = config('service-utils.service_codes.' . $errorCode . '.message');
         }
     }
 
@@ -51,7 +51,7 @@ class ServiceResponse
      */
     public function hasErrors()
     {
-        return ($this->errorCode !== config('service-utils.codes.NOT_ERROR'));
+        return (config('service-utils.service_codes.' . $this->errorCode . '.is_error') === true);
     }
 
     /**
@@ -61,7 +61,7 @@ class ServiceResponse
      */
     public function isCritical()
     {
-        return ($this->errorCode >= config('service-utils.codes.ERROR_GENERAL'));
+        return (config('service-utils.service_codes.' . $this->errorCode . '.is_critical') === true);
     }
 
     /**
@@ -91,6 +91,6 @@ class ServiceResponse
      */
     public function getHttpCode()
     {
-        return config('service-utils.http_codes.' . $this->errorCode);
+        return config('service-utils.service_codes.' . $this->errorCode . '.http_code');
     }
 }

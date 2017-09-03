@@ -1,29 +1,28 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Response;
+
 return [
 
     /*
      *
      */
-    'codes' => [
-        'NOT_ERROR' => 0,
-        'ERROR_GENERAL' => 1000,
-    ],
+    'service_codes' => [
 
-    /*
-     *
-     */
-    'messages' => [
-        'NOT_ERROR' => 'Ok.',
-        'ERROR_GENERAL' => 'General error.',
-    ],
+        0 => [
+            'message' => 'Ok.',
+            'http_code' => Response::HTTP_OK,
+            'is_critial' => false,
+            'is_error' => false,
+        ],
 
-    /*
-     *
-     */
-    'http_codes' => [
-        'NOT_ERROR' => Response::HTTP_OK,
-        'ERROR_GENERAL' => Response::HTTP_INTERNAL_SERVER_ERROR,
+        1000 => [
+            'message' => 'General error.',
+            'http_code' => Response::HTTP_INTERNAL_SERVER_ERROR,
+            'is_critial' => false,
+            'is_error' => true,
+        ],
+
     ],
 
 ];

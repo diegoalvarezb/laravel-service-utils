@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Response;
 return [
 
     /*
-     *
+     * Error code list for service response interface.
      */
     'service_codes' => [
 

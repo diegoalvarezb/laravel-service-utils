@@ -9,18 +9,18 @@ return [
      */
     'service_codes' => [
 
-        0 => [
+        'NOT_ERROR' => [
+            'is_error' => false,
             'message' => 'Ok.',
             'http_code' => Response::HTTP_OK,
             'is_critial' => false,
-            'is_error' => false,
         ],
 
-        1000 => [
+        'GENERAL_ERROR' => [
+            'is_error' => true,
             'message' => 'General error.',
             'http_code' => Response::HTTP_INTERNAL_SERVER_ERROR,
             'is_critial' => false,
-            'is_error' => true,
         ],
 
     ],

@@ -22,7 +22,7 @@ abstract class AbstractService
      */
     protected function generateResponse(
         $data = [],
-        $errorCode = 0,
+        $errorCode = 'NOT_ERROR',
         $message = ''
     ) {
         return new ServiceResponse($data, $errorCode, $message);
